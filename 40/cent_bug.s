@@ -99,8 +99,10 @@ b_catch	equ	10		; dit si on doit ou non catcher la fonction
 ** - Remmettre en fonctionnement la linef detourn‚e **
 ** - Petit bug lors du rappel de lignes             **
 ******************************************************
+	MC68030
 	
 	
+	mc68881
 
 	include	d:\centinel\both\define.s
 	output	d:\centinel\40\cent_bug.o
