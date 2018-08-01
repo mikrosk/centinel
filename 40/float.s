@@ -1,4 +1,3 @@
-	MC68881
 
 	lea	NUM,a0
 	bsr	READ_FLOAT	

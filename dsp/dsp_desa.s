@@ -1,4 +1,3 @@
-	MC68881
 	TEXT
 	output	d:\centinel\dsp\dsp_desa.o
 	include	d:\centinel\both\define.s

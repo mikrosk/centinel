@@ -2,7 +2,6 @@
 ** macro qui va transformer dn*1 en dn **
 *****************************************
 
-	MC68881
 
 vire_le	macro
 	cmp.b	#1,d0

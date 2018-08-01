@@ -1,5 +1,4 @@
 
-	MC68881
 
 START
 	output	d:\centinel\dsp\dsp_bug.o

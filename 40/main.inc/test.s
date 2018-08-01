@@ -20,7 +20,6 @@ DEBUG	MACRO
 	
 	
 	
-	mc68881
 
 prog_a_tester::
 
