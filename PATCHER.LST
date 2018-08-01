@@ -1,0 +1,52 @@
+RESERVE (10000)
+CLS
+INPUT msp$
+cherchemsp(msp$)
+PRINT HEX$(msp%)
+patchone("d:\centinel\centinel.prg",msp%)
+patchone("d:\centinel\cent_bug.prg",msp%)
+patchone("d:\centinel\dsp_bug.prg",msp%)
+RESERVE
+END
+> PROCEDURE patchone(file$,numero%)
+  PRINT "patching ";file$
+  OPEN "i",#1,file$
+  size%=LOF(#1)
+  PRINT size%
+  CLOSE #1
+  a%=MALLOC(size%)
+  BLOAD file$,a%
+  FOR i%=size%-10 TO 0 STEP -1
+    IF (i% MOD 1024)=0
+      PRINT ".";
+    ENDIF
+    IF LONG{a%+i%}=&H5B042E31
+      IF CARD{a%+i%+4}=&H2E02
+        PRINT "trouv‚"
+        PRINT
+        DPOKE a%+i%+6+1,DPEEK(V:numero%)
+        DPOKE a%+i%+6+4,DPEEK((V:numero%)+2)
+        i%=0
+      ENDIF
+    ENDIF
+  NEXT i%
+  BSAVE file$,a%,size%
+  ~MFREE(a%)
+RETURN
+> PROCEDURE cherchemsp(name$)
+  nb%=2 !nb de personnes
+  RESTORE
+  msp%=0
+  FOR i%=1 TO nb%
+    READ toto$,temp$
+    IF toto$=name$
+      msp%=VAL("&H"+temp$)
+      i%=nb%
+    ENDIF
+  NEXT i%
+  IF msp%=0
+    msp%=VAL("&h"+msp$)
+  ENDIF
+  DATA "RONAN","bfbdffbb"
+  DATA "STEPH","100b64e1"
+RETURN

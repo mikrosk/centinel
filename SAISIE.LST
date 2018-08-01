@@ -1,0 +1,162 @@
+'
+'
+' Petit editeur de 3 sous pour pouvoir faire le about
+' f1 .. f10   shift f1 .. f5 change les couleurs
+' insert inverse on/off
+' undo save dans text.bin
+' help charge
+'
+'
+'
+a$=SPACE$(64)
+palette%=V:a$
+BLOAD "d:\centinel\both\default.pal",palette%
+FOR i%=0 TO 15 STEP 1
+  SLPOKE &HFFFF9800+i%*4,LPEEK(palette%+i%*4)
+NEXT i%
+max=26
+DIM base$(1,max)         ! pour affiche
+DIM attrib$(1,max)       ! pour les attibes
+DIM inv$(1,max)
+i%=0
+j%=0
+co%=1
+a_co%=1
+coul_cou%=15
+CLS
+inv%=0
+PRINT AT(1,max+2);CHR$(27)+"b"+CHR$(15)
+PRINT AT(1,max+2);"inv : "+STR$(inv%)
+PRINT AT(1,max+3);"Couleur : "+STR$(coul_cou%)+"  "+CHR$(27)+"b"+CHR$(coul_cou%)+"TEST    "
+PRINT AT(1,max+4);CHR$(27)+"b"+CHR$(15)
+PRINT AT(1,max+4);"Col : "+STR$(LEN(base$(1,co%))+1)+"   Ligne : "+STR$(co%)+"  "
+DO
+  base$(1,co%)=base$(1,co%)+"_"
+  attrib$(1,co%)=attrib$(1,co%)+HEX$(15)
+  '  PRINT AT(1,co%);MID$(base$(1,co%),1,1)
+  FOR i%=1 TO 80
+    IF MID$(inv$(1,co%),i%,1)="1"
+      PRINT AT(i%,co%);CHR$(27)+"p"
+    ELSE
+      PRINT AT(i%,co%);CHR$(27)+"q"
+    ENDIF
+    PRINT AT(i%,co%);CHR$(27)+"b"+CHR$(VAL("&H"+MID$(attrib$(1,co%),i%,1)))
+    PRINT AT(i%,co%);MID$(base$(1,co%),i%,1)
+  NEXT i%
+  PRINT AT(1,max+1);CHR$(27)+"b"+CHR$(15)
+  PRINT AT(81,co%);" "
+  DRAW 1,(max+1)*16-8 TO 81*8,(max+1)*16-8
+  DRAW 81*8,1 TO 81*8,(max+1)*16-8
+  b%=INP(2)
+  b$=CHR$(b%)
+  a_co%=co%
+  base$(1,co%)=MID$(base$(1,co%),1,LEN(base$(1,co%))-1)
+  attrib$(1,co%)=MID$(attrib$(1,co%),1,LEN(attrib$(1,co%))-1)
+  PRINT AT(1+LEN(base$(1,co%)),co%);" "
+  IF b%=210
+    IF inv%=0
+      inv%=1
+    ELSE
+      inv%=0
+    ENDIF
+  ENDIF
+  FOR i%=0 TO 9
+    IF b%=i%+187
+      coul_cou%=i%
+    ENDIF
+  NEXT i%
+  FOR i%=0 TO 5
+    IF b%=i%+212
+      coul_cou%=i%+10
+    ENDIF
+  NEXT i%
+  IF b%=200
+    co%=co%-1
+    IF co%=0
+      co%=1
+    ENDIF
+  ENDIF
+  IF b%=208
+    co%=co%+1
+    IF co%=max+1
+      co%=max
+    ENDIF
+  ENDIF
+  IF b%=13
+    co%=co%+1
+    IF co%>=max
+      co%=max
+    ENDIF
+  ENDIF
+  IF b%=8 AND LEN(base$(1,co%))=>1
+    base$(1,co%)=MID$(base$(1,co%),1,LEN(base$(1,co%))-1)
+    attrib$(1,co%)=MID$(attrib$(1,co%),1,LEN(attrib$(1,co%))-1)
+    inv$(1,co%)=MID$(inv$(1,co%),1,LEN(inv$(1,co%))-1)
+  ENDIF
+  IF b%>=32 AND b%<=127 AND LEN(base$(1,co%))<=80
+    base$(1,co%)=base$(1,co%)+b$
+    attrib$(1,co%)=attrib$(1,co%)+HEX$(coul_cou%)
+    inv$(1,co%)=inv$(1,co%)+STR$(inv%)
+  ENDIF
+  IF b%=225
+    len=0
+    a$=SPACE$(32000)
+    a%=V:a$
+    FOR i%=1 TO max
+      FOR j%=1 TO LEN(base$(1,i%))
+        POKE a%+1,ASC(MID$(base$(1,i%),j%,1))
+        POKE a%,(VAL("&h"+MID$(attrib$(1,i%),j%,1)) OR VAL(MID$(inv$(1,i%),j%,1))*64)
+        a%=a%+2
+        len=len+2
+      NEXT j%
+      DPOKE a%,13    ! retour chariots
+      len=len+2
+      a%=a%+2
+    NEXT i%
+    DPOKE a%,&H8000  ! fin de chaine
+    len=len+2
+    BSAVE "d:\centinel\text.bin",V:a$,len
+  ENDIF
+  IF b%=226
+    FOR i%=1 TO max
+      base$(1,i%)=""
+      attrib$(1,i%)=""
+      inv$(1,i%)=""
+    NEXT i%
+    a$=SPACE$(32000)
+    a%=V:a$
+    BLOAD "d:\centinel\text.bin",V:a$
+    co%=1
+    b%=DPEEK(a%)
+    WHILE b%<>&H8000
+      IF (b%=13) OR (b%=10)
+        co%=co%+1
+      ELSE
+        base$(1,co%)=base$(1,co%)+CHR$(b% AND 255)
+        attrib$(1,co%)=attrib$(1,co%)+HEX$((b%\256) AND 15)
+        inv$(1,co%)=inv$(1,co%)+STR$((b%\256*64) AND 1)
+      ENDIF
+      a%=a%+2
+      b%=DPEEK(a%)
+    WEND
+    CLS
+    FOR co%=1 TO max
+      PRINT AT(1,max+1);CHR$(27)+"b"+CHR$(15)+STR$(max-co%)+"   "
+      FOR i%=1 TO 80
+        IF MID$(inv$(1,co%),i%,1)="1"
+          PRINT AT(i%,co%);CHR$(27)+"p"
+        ELSE
+          PRINT AT(i%,co%);CHR$(27)+"q"
+        ENDIF
+        PRINT AT(i%,co%);CHR$(27)+"b"+CHR$(VAL("&h"+MID$(attrib$(1,co%),i%,1)))
+        PRINT AT(i%,co%);MID$(base$(1,co%),i%,1)
+      NEXT i%
+    NEXT co%
+    co%=1
+  ENDIF
+  PRINT AT(1,max+2);CHR$(27)+"b"+CHR$(15)
+  PRINT AT(1,max+2);"inv : "+STR$(inv%)
+  PRINT AT(1,max+3);"Couleur : "+STR$(coul_cou%)+"  "+CHR$(27)+"b"+CHR$(coul_cou%)+"TEST    "
+  PRINT AT(1,max+4);CHR$(27)+"b"+CHR$(15)
+  PRINT AT(1,max+4);"Col : "+STR$(LEN(base$(1,co%))+1)+"   Ligne : "+STR$(co%)+"  "
+LOOP
