@@ -374,7 +374,7 @@ div_l
 
 affiche_nombre
 	
-	include	'eval.inc\aff_n.s'
+	include	'40\eval.inc\aff_n.s'
 	
 	
 	DATA

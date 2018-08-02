@@ -293,11 +293,13 @@ start
 	bra.s	.p_illegal
 	
 .ille
+	MC68040
 	move.l	#.illegal,$10.w
 	movec	urp,d0				; instruc 68040
 	move.w	#cpu_40,CPU_TYPE
 	bra.s	.p_illegal
 .illegal
+	MC68030
 	move.l	#.illegal1,$10.w
 	movec	usp,d0				; instruc 68030
 	move.w	#cpu_30,CPU_TYPE
@@ -870,7 +872,7 @@ TRACE::
 	bne.s	.p_030
 	
 	
-	
+	MC68030
 	movec	cacr,d0
 	move.l	d0,r_cacr(a6)
 	movec	caar,d0
@@ -892,7 +894,7 @@ TRACE::
 	cmp.w	#cpu_40,CPU_TYPE		; si on a un 68040
 	bne.s	.p_040
 	
-	
+	MC68040
 	movec	cacr,d0
 	move.l	d0,r_cacr(a6)
 	
@@ -931,7 +933,7 @@ TRACE::
 	cmp.w	#cpu_60,CPU_TYPE
 	bne.s	.p_060
 	
-	
+	MC68040	; MC68060...
 	movec	cacr,d0
 	move.l	d0,r_cacr(a6)
 	
@@ -971,7 +973,7 @@ TRACE::
 	
 .p_060
 
-
+	MC68030
 	clr.l	d0
 	movec	dfc,d0
 	move.l	d0,r_dfc(a6)
@@ -981,7 +983,7 @@ TRACE::
 	
 .fpu	
 	ifne FPU_PRES				;sauvegarde des registres du fpu
-
+	MC68881
 	lea	buffer_fpu,a6
 	fsave	-(a6)
 	move.l	a6,s_fpu
@@ -5237,7 +5239,7 @@ INIT_DEBUG
 
 
 	ifne	FPU_PRES
-
+	MC68881
 	lea	buffer_r+r_fp0,a6
 	
 	fmove.x	fp0,(a6)
@@ -5359,7 +5361,7 @@ Restore_reg::
 **************************************************
 	
 	ifne	FPU_PRES
-	
+	MC68881
 	lea	buffer_r,a6
 	
 	lea	r_fp0+buffer_r,a6

@@ -3,7 +3,7 @@
 	
 	
 	include	BOTH\DEFINE.S
-	include	macros.s
+	include	40\macros.s
 
 	xref	pile_test,s_a7,ERR_MEM,ADR_VBR,TRACE,COL_NOR,COL_ERR_L,ATTRIBUTE
 **************************************
@@ -4163,7 +4163,7 @@ calcule_adresse::
 
 
 
-		include	eval.inc\convert.s 
+		include	40\eval.inc\convert.s 
 
 	DATA
 

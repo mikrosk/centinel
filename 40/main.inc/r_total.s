@@ -4915,6 +4915,7 @@ r_update::
 	
 	cmp.w	#cpu_30,CPU_TYPE		; si on a un 68030
 	bne	.p_030
+	MC68030
 	move.l	r_caar(a6),d0
 	movec	d0,caar
 	move.l	d0,r_caar(a5)
@@ -4957,6 +4958,7 @@ r_update::
 .p_030
 	cmp.w	#cpu_40,CPU_TYPE		; si on a un 68040
 	bne.s	.p_040
+	MC68040
 	move.l	r_cacr(a6),d0
 	movec	d0,cacr
 	move.l	r_cacr(a6),r_cacr(a5)
@@ -4965,7 +4967,7 @@ r_update::
 
 
 
-
+	MC68030
 	clr.l	d0
 	move.l	r_dfc(a6),d0
 	movec	d0,dfc

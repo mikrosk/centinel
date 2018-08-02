@@ -1,7 +1,7 @@
 	include	both\define.s
 	xref	ERR_MEM,COL_ERR_L
 	
-	include	macros.s
+	include	40\macros.s
 
 *****  attention lors du relatif pc prendre une variable avec
 *****  le pc+2 dedans
@@ -166,8 +166,8 @@ Table_des_instructions
 * mn‚monique                                         *
 * pointeur sur la routine qui cherche les registres  *
 ******************************************************
-	include	'desas.inc\table_i.s'	
-	include 'desas.inc\table_fp.s'	
+	include	'40\desas.inc\table_i.s'	
+	include '40\desas.inc\table_fp.s'	
 
 	TEXT
 
@@ -3985,7 +3985,7 @@ mode
 ** incremente automatiquement le a4        **
 *********************************************
 	
-	include	'desas.inc\mode.s'
+	include	'40\desas.inc\mode.s'
 	
 	
 affiche_nombre::
@@ -3994,14 +3994,14 @@ affiche_nombre::
 ** le nombre en hexa qui se trouve dans d0 **
 ** avec supression des zeros de debut      **
 *********************************************
-	include	'desas.inc\aff_nb.s'
+	include	'40\desas.inc\aff_nb.s'
 
 affiche_nombre_zero::
 *********************************************
 ** routine qui renvoie dans la chaine      **
 ** le nombre en hexa qui se trouve dans d0 **
 *********************************************
-	include	'desas.inc\aff_nb_z.s'
+	include	'40\desas.inc\aff_nb_z.s'
 
 	cnop	0,16
 test_label

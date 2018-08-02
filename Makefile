@@ -1,17 +1,9 @@
-AS	= asm020.ttp
-ASFLAGS	= -w -l1
-LD	= plink.ttp
-LDFLAGS = -G -L -S=128
-
 top_dir	:= $(PWD)
 
-DIRDSP	:= $(top_srcdir)\DSP
-DIR40	:= $(top_srcdir)\40
-DIRBOTH	:= $(top_srcdir)\BOTH
-
-ASFLAGS	+= -i$(DIRDSP)
-ASFLAGS	+= -i$(DIR40)
-ASFLAGS	+= -i$(DIRBOTH)
+AS	:= asm020.ttp
+ASFLAGS	:= -w -l1 -i$(top_dir) -p=68020
+LD	:= plink.ttp
+LDFLAGS := -G -L -S=128
 
 default: DSP_BUG.PRG CENTINEL.PRG
 
@@ -103,7 +95,7 @@ both\gestion.o 	: both\define.s
 both\video.o	: both\define.s both\xbios.equ both\video.rs both\gem.equ
 both\cfg_file.o	: both\define.s both\default.inf
 both\f_sel.o 	: both\define.s
-both\menu.o:	: both\define.s both\localmac.s
+both\menu.o	: both\define.s both\localmac.s
 #both\windows.o	:
 #40\main.inc\test.o :
 

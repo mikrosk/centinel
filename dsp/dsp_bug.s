@@ -2940,12 +2940,12 @@ INIT_DSP_REG
 TRACE_UNTIL_FLAG	dc	0
 
 	ifne	DSP=DSP56001
-P56	incbin	DSP.P56
+P56	incbin	dsp\DSP.P56
 END_P56
 	endc
 	
 	ifne	DSP=DSP56301
-P56	incbin	DSP301.P56
+P56	incbin	dsp\DSP301.P56
 END_P56
 	endc
 	

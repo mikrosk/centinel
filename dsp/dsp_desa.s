@@ -604,10 +604,10 @@ FRAC	ds	12
 
 ;**************************************	
 
-	include	table.S
-	include	NO_PARAL.S
-	include	PARAL.S
-	include	INSTRUCT.S
+	include	dsp\table.S
+	include	dsp\NO_PARAL.S
+	include	dsp\PARAL.S
+	include	dsp\INSTRUCT.S
 
 	DATA
 TAB_CONV:: dc.b	'0123456789ABCDEF'

@@ -4,7 +4,7 @@ c
 
 	include	both\define.s
 	include	both\GEM.EQU
-	include	SAVEPREF.S
+	include	both\SAVEPREF.S
 	
 	xref	ACTIVE_WINDOW,WINDOW_LIST
 	
@@ -1519,10 +1519,10 @@ AFF_XY::
 	rts
 
 DRAW_S3
-	include	AFF_TC.S
+	include	both\AFF_TC.S
 
 ;------------------------------------------------------------------------------
-	include	TABAFF.S
+	include	both\TABAFF.S
 ;------------------------------------------------------------------------------
 
 
@@ -2841,7 +2841,7 @@ set_40_flags::
 
 
 
-	include	OPEN_WIN.S
+	include	both\OPEN_WIN.S
 
 
 	
@@ -3044,10 +3044,10 @@ TAB_LIST	dc	0,10,18,31,44,80,$7fff
 ;------------------------------------------------------------------------------
 FONT	
 	ifeq	(size_font=8)
-	incbin	BLUE16.FNT
+	incbin	both\BLUE16.FNT
 	endc
 	ifeq	(size_font=16)
-	incbin	BLUE8.FNT
+	incbin	both\BLUE8.FNT
 	endc
 ;------------------------------------------------------------------------------
 

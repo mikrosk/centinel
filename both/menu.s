@@ -644,5 +644,5 @@ io8		dc.b	' I/I 08 bits  ',0
 
 CURRENT_MENU	dc	0
 ACTIF_MENU	dc	0
-ABOUT_MES	incbin	about.bin
-HELP_MES	incbin	help.bin
+ABOUT_MES	incbin	both\about.bin
+HELP_MES	incbin	both\help.bin

@@ -1,4 +1,4 @@
-	include macros.s
+	include 40\macros.s
 	include	both\define.s
 
 
