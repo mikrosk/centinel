@@ -1,4 +1,3 @@
-	output	d:\centinel\dsp\windows.o
 
 		DATA
 WINDOW_LIST::	

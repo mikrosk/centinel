@@ -6,7 +6,6 @@
 ;------------------------------------------------------------------------------
 
 
-	output	d:\centinel\dsp\load_cld.o
 	include	d:\centinel\both\define.s
 	include	d:\Centinel\both\GEM.EQU
 

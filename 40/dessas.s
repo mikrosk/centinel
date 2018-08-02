@@ -1,5 +1,4 @@
 	include	d:\centinel\both\define.s
-	output	d:\centinel\40\dessas.o
 	incdir	d:\centinel\40
 	xref	ERR_MEM,COL_ERR_L
 	

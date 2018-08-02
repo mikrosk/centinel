@@ -1,6 +1,5 @@
 	include	d:\centinel\both\define.s
 	include d:\centinel\40\macros.s
-	output	d:\centinel\both\gestion.o
 	incdir	d:\centinel\both
 	xref	ERR_MEM,COL_NOR,COL_ERR_L,ATTRIBUTE
 

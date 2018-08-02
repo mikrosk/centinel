@@ -1,4 +1,3 @@
-	output	d:\centinel\both\clavier.o
 	incdir	d:\centinel\dsp
 	
 	

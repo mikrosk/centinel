@@ -1,5 +1,4 @@
 	TEXT
-	output	d:\centinel\both\f_sel.o.o
 
 	include	both\GEM.EQU
 	include	d:\centinel\both\define.s

@@ -1,7 +1,6 @@
 c 
 	TEXT
 
-	output	d:\centinel\both\aff_font.o
 	incdir	d:\centinel\both
 
 	include	d:\centinel\both\define.s

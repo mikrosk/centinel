@@ -2,7 +2,6 @@
 	MC68881
 
 START
-	output	d:\centinel\dsp\dsp_bug.o
 	incdir	d:\centinel\dsp
 
 	include	d:\centinel\both\define.s

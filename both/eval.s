@@ -3,7 +3,6 @@
 	
 	
 	include	d:\CENTINEL\BOTH\DEFINE.S
-	output	d:\centinel\both\eval.o
 	incdir	d:\centinel\40
 	include	macros.s
 

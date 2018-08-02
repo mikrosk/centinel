@@ -3,7 +3,6 @@
 
 
 
-	output	d:\centinel\both\menu.o
 	incdir	d:\centinel\both
 
 	include	d:\centinel\both\define.s

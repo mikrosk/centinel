@@ -1,5 +1,4 @@
 	include	d:\centinel\both\define.s
-	output	d:\centinel\40\main.inc\aff_desa.o
 	incdir	d:\centinel\40
 	include	d:\centinel\both\LOCALMAC.S
 	include 40\macros.s

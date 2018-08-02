@@ -1,4 +1,3 @@
-	output	d:\centinel\both\hexedit.o
 	incdir	d:\centinel\dsp
 
 	include	d:\centinel\both\define.s

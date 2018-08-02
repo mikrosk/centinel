@@ -1,4 +1,3 @@
-	output	d:\centinel\dsp\scroll.o
 	incdir	d:\centinel\dsp
 
 	include	d:\centinel\both\define.s

@@ -1,4 +1,3 @@
-	output	d:\centinel\dsp\gen_fen.o
 	incdir	d:\centinel\dsp
 
 	include	d:\centinel\both\define.s

@@ -1,4 +1,3 @@
-	output	d:\centinel\40\main.inc\test.o
 
 
 	

@@ -1,4 +1,3 @@
-	output	d:\centinel\both\windows.o
 
 	DATA
 

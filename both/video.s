@@ -1,6 +1,5 @@
 	TEXT
 
-	output	d:\centinel\both\video.o
 	include	d:\centinel\both\define.s
 	include	d:\centinel\both\localmac.s
 	include	d:\centinel\both\GEM.EQU
