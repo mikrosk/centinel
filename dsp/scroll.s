@@ -1,5 +1,5 @@
 
-	include	d:\centinel\both\define.s
+	include	both\define.s
 ;**************************************
 SCROLL_U_DUMP_VITE::
 	move	nb_colonnes(a0),d0

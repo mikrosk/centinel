@@ -1,4 +1,4 @@
-	include	d:\centinel\both\define.s
+	include	both\define.s
 	xref	ERR_MEM,COL_ERR_L
 	
 	include	macros.s

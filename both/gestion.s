@@ -1,5 +1,5 @@
-	include	d:\centinel\both\define.s
-	include d:\centinel\40\macros.s
+	include	both\define.s
+	include 40\macros.s
 	xref	ERR_MEM,COL_NOR,COL_ERR_L,ATTRIBUTE
 
 

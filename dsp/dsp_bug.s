@@ -3,10 +3,10 @@
 
 START
 
-	include	d:\centinel\both\define.s
-	include	d:\Centinel\both\GEM.EQU
-	include	d:\Centinel\both\XBIOS.EQU
-	include	d:\Centinel\both\localma2.s
+	include	both\define.s
+	include	both\GEM.EQU
+	include	both\XBIOS.EQU
+	include	both\localma2.s
 
 ;------------------------------------------------------------------------------
 ;------------------------------------------------------------------------------

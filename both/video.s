@@ -1,11 +1,11 @@
 	TEXT
 
-	include	d:\centinel\both\define.s
-	include	d:\centinel\both\localmac.s
-	include	d:\centinel\both\GEM.EQU
-	include	d:\centinel\both\XBIOS.EQU
-	include	d:\centinel\both\DOLMEN.RS
-	include	d:\centinel\both\VIDEO.RS
+	include	both\define.s
+	include	both\localmac.s
+	include	both\GEM.EQU
+	include	both\XBIOS.EQU
+	include	both\DOLMEN.RS
+	include	both\VIDEO.RS
 
 
 S3VIDEO	equ	0

@@ -6,8 +6,8 @@
 ;------------------------------------------------------------------------------
 
 
-	include	d:\centinel\both\define.s
-	include	d:\Centinel\both\GEM.EQU
+	include	both\define.s
+	include	both\GEM.EQU
 
 
 

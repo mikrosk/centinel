@@ -1,4 +1,4 @@
-	include	d:\centinel\both\gem.equ
+	include	both\gem.equ
 
 ; ceci est un programme pour r‚cup‚rer les infos de d‚bug ds un 
 ; programme au format TOS

@@ -1,6 +1,6 @@
 	MC68881
 	TEXT
-	include	d:\centinel\both\define.s
+	include	both\define.s
 
 COPY	macro
 	move	d0,-(sp)

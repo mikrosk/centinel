@@ -4,8 +4,8 @@
 
 
 
-	include	d:\centinel\both\define.s
-	include	d:\centinel\both\localmac.s
+	include	both\define.s
+	include	both\localmac.s
 
 
 DRAW_MENU::

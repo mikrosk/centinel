@@ -1,7 +1,7 @@
 	TEXT
 
 	include	both\GEM.EQU
-	include	d:\centinel\both\define.s
+	include	both\define.s
 	include	both\LOCALMAC.S
 
 	xref	buf_dta,BASE_PAGE,SAVE_OLD_PROS

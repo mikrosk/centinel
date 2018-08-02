@@ -1,6 +1,6 @@
 	
 	
-	include	d:\centinel\both\define.s
+	include	both\define.s
 	
 get_key::
 *******************************************

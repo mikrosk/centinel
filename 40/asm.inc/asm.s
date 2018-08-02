@@ -1,5 +1,5 @@
 	include macros.s
-	include	d:\centinel\both\define.s
+	include	both\define.s
 
 
 	************************

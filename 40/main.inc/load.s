@@ -1,6 +1,6 @@
-	include	d:\centinel\both\define.s
-	include	d:\centinel\both\LOCALMAC.S
-	include	d:\centinel\both\GEM.EQU
+	include	both\define.s
+	include	both\LOCALMAC.S
+	include	both\GEM.EQU
 	include 40\macros.s
 	;xref	COL_ADR,COL_NOR,COL_LAB,COL_FCT,COL_REG,COL_CHG,COL_BKPT,COL_ERR_L,ATTRIBUTE,COL_MENU,COL_DSP
 	xref	bkpt,m,TRACE,nombre,affiche_nombre_zero

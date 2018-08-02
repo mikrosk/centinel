@@ -2,7 +2,7 @@
 	xref	READ_FLOAT
 	
 	
-	include	d:\CENTINEL\BOTH\DEFINE.S
+	include	BOTH\DEFINE.S
 	include	macros.s
 
 	xref	pile_test,s_a7,ERR_MEM,ADR_VBR,TRACE,COL_NOR,COL_ERR_L,ATTRIBUTE

@@ -1,5 +1,5 @@
 
-	include	d:\centinel\both\define.s
+	include	both\define.s
 
 EDITOR::	xref	ACTIVE_WINDOW,set_all_flags
 	movem.l	d0-a6,-(sp)

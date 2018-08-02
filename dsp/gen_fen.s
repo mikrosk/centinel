@@ -1,7 +1,7 @@
 
-	include	d:\centinel\both\define.s
-	;include	d:\Centinel\both\GEM.EQU
-	;include	d:\Centinel\both\XBIOS.EQU
+	include	both\define.s
+	;include	both\GEM.EQU
+	;include	both\XBIOS.EQU
 
 	;opt	p=68882
 	;opt	p=68030

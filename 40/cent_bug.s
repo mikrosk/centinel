@@ -104,11 +104,11 @@ b_catch	equ	10		; dit si on doit ou non catcher la fonction
 	
 	mc68881
 
-	include	d:\centinel\both\define.s
+	include	both\define.s
 	
 	
-	include	d:\centinel\both\GEM.EQU
-	include	d:\centinel\both\LOCALMAC.S
+	include	both\GEM.EQU
+	include	both\LOCALMAC.S
 	
 	include 40\macros.s
 

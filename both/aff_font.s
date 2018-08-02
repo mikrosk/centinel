@@ -2,8 +2,8 @@ c
 	TEXT
 
 
-	include	d:\centinel\both\define.s
-	include	d:\centinel\both\GEM.EQU
+	include	both\define.s
+	include	both\GEM.EQU
 	include	SAVEPREF.S
 	
 	xref	ACTIVE_WINDOW,WINDOW_LIST
