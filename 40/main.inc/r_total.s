@@ -1,7 +1,6 @@
 	TEXT
 	
 	include	d:\centinel\both\define.s
-	incdir	d:\centinel\40
 	include	d:\centinel\both\LOCALMAC.S
 	include	d:\centinel\both\GEM.EQU
 	xref	COL_ADR,COL_NOR,COL_LAB,COL_FCT,COL_REG,COL_CHG,COL_BKPT,COL_ERR_L,ATTRIBUTE,COL_MENU,COL_DSP

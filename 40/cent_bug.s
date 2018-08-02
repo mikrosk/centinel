@@ -105,7 +105,6 @@ b_catch	equ	10		; dit si on doit ou non catcher la fonction
 	mc68881
 
 	include	d:\centinel\both\define.s
-	incdir	d:\centinel\40
 	
 	
 	include	d:\centinel\both\GEM.EQU

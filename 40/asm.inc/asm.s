@@ -1,4 +1,3 @@
-	incdir	d:\centinel\40
 	include macros.s
 	include	d:\centinel\both\define.s
 

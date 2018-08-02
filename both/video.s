@@ -7,7 +7,6 @@
 	include	d:\centinel\both\DOLMEN.RS
 	include	d:\centinel\both\VIDEO.RS
 
-	incdir	d:\centinel\both\
 
 S3VIDEO	equ	0
 

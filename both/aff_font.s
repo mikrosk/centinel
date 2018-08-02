@@ -1,7 +1,6 @@
 c 
 	TEXT
 
-	incdir	d:\centinel\both
 
 	include	d:\centinel\both\define.s
 	include	d:\centinel\both\GEM.EQU

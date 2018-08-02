@@ -3,7 +3,6 @@
 	
 	
 	include	d:\CENTINEL\BOTH\DEFINE.S
-	incdir	d:\centinel\40
 	include	macros.s
 
 	xref	pile_test,s_a7,ERR_MEM,ADR_VBR,TRACE,COL_NOR,COL_ERR_L,ATTRIBUTE

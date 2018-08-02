@@ -1,7 +1,6 @@
 	MC68881
 	TEXT
 	include	d:\centinel\both\define.s
-	incdir	d:\centinel\dsp
 
 COPY	macro
 	move	d0,-(sp)

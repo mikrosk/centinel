@@ -1,4 +1,3 @@
-	incdir	d:\centinel\dsp
 	
 	
 	include	d:\centinel\both\define.s

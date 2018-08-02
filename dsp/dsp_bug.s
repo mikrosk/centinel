@@ -2,7 +2,6 @@
 	MC68881
 
 START
-	incdir	d:\centinel\dsp
 
 	include	d:\centinel\both\define.s
 	include	d:\Centinel\both\GEM.EQU

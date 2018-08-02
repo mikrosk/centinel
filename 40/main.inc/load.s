@@ -1,5 +1,4 @@
 	include	d:\centinel\both\define.s
-	incdir	d:\centinel\40
 	include	d:\centinel\both\LOCALMAC.S
 	include	d:\centinel\both\GEM.EQU
 	include 40\macros.s
