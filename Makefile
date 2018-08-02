@@ -3,7 +3,7 @@ top_dir	:= $(PWD)
 AS	:= asm020.ttp
 ASFLAGS	:= -w -l1 -i$(top_dir) -p=68020
 LD	:= plink.ttp
-LDFLAGS := -G -L -S=128
+LDFLAGS := -G -S=128
 
 default: DSP_BUG.PRG CENTINEL.PRG
 
